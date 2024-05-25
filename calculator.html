@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <h1 class="mt-5">Simple Calculator</h1>
+  <div class="calculator mt-4">
+    <input type="text" class="form-control mb-3" id="display" readonly>
+    <div class="row">
+      <button class="btn btn-primary col-3" onclick="addToDisplay('7')">7</button>
+      <button class="btn btn-primary col-3" onclick="addToDisplay('8')">8</button>
+      <button class="btn btn-primary col-3" onclick="addToDisplay('9')">9</button>
+      <button class="btn btn-warning col-3" onclick="addToDisplay('+')">+</button>
+    </div>
+    <div class="row">
+      <button class="btn btn-primary col-3" onclick="addToDisplay('4')">4</button>
+      <button class="btn btn-primary col-3" onclick="addToDisplay('5')">5</button>
+      <button class="btn btn-primary col-3" onclick="addToDisplay('6')">6</button>
+      <button class="btn btn-warning col-3" onclick="addToDisplay('-')">-</button>
+    </div>
+    <div class="row">
+      <button class="btn btn-primary col-3" onclick="addToDisplay('1')">1</button>
+      <button class="btn btn-primary col-3" onclick="addToDisplay('2')">2</button>
+      <button class="btn btn-primary col-3" onclick="addToDisplay('3')">3</button>
+      <button class="btn btn-warning col-3" onclick="addToDisplay('*')">*</button>
+    </div>
+    <div class="row">
+      <button class="btn btn-primary col-3" onclick="addToDisplay('0')">0</button>
+      <button class="btn btn-primary col-3" onclick="clearDisplay()">C</button>
+      <button class="btn btn-warning col-3" onclick="addToDisplay('/')">/</button>
+      <button class="btn btn-success col-3" onclick="calculate()">=</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  function addToDisplay(value) {
+    $('#display').val($('#display').val() + value);
+  }
+
+  function clearDisplay() {
+    $('#display').val('');
+  }
+
+  function calculate() {
+    var result = eval($('#display').val());
+    $('#display').val(result);
+  }
+</script>
+
+</body>
+</html>
